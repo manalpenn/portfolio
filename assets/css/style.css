@@ -1,0 +1,383 @@
+:root {
+  --primary: #1a5276;
+  --primary-light: #2980b9;
+  --accent: #148f77;
+  --text: #2c3e50;
+  --text-light: #566573;
+  --bg: #ffffff;
+  --bg-alt: #f8f9fa;
+  --border: #e5e8eb;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: var(--text);
+  line-height: 1.7;
+  background: var(--bg);
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Header */
+header {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+  color: white;
+  padding: 4rem 0 3rem;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+header .subtitle {
+  font-size: 1.15rem;
+  opacity: 0.9;
+  margin-bottom: 1.5rem;
+  font-weight: 300;
+}
+
+header .contact-info {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+header .contact-info a {
+  color: white;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.4);
+}
+
+header .contact-info a:hover {
+  border-bottom-color: white;
+}
+
+/* Navigation */
+nav {
+  background: white;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--shadow);
+}
+
+nav .container {
+  display: flex;
+  overflow-x: auto;
+  gap: 0;
+}
+
+nav a {
+  display: block;
+  padding: 1rem 1.25rem;
+  color: var(--text-light);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  white-space: nowrap;
+  border-bottom: 3px solid transparent;
+  transition: all 0.2s;
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+}
+
+/* Sections */
+section {
+  padding: 3.5rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+section:last-child {
+  border-bottom: none;
+}
+
+section:nth-child(even) {
+  background: var(--bg-alt);
+}
+
+section h2 {
+  font-size: 1.6rem;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--accent);
+  display: inline-block;
+}
+
+/* Summary */
+.summary-text {
+  font-size: 1.05rem;
+  color: var(--text-light);
+  max-width: 800px;
+  line-height: 1.8;
+}
+
+/* Document cards */
+.doc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+.doc-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: box-shadow 0.2s, transform 0.2s;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.doc-card:hover {
+  box-shadow: var(--shadow);
+  transform: translateY(-2px);
+}
+
+.doc-card .icon {
+  width: 40px;
+  height: 40px;
+  background: var(--bg-alt);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 1.2rem;
+}
+
+.doc-card .doc-info h4 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+
+.doc-card .doc-info p {
+  font-size: 0.8rem;
+  color: var(--text-light);
+}
+
+/* Experience timeline */
+.timeline {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  bottom: 0.5rem;
+  width: 2px;
+  background: var(--border);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -2rem;
+  top: 0.5rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid white;
+  box-shadow: 0 0 0 2px var(--accent);
+}
+
+.timeline-item h4 {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.timeline-item .meta {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  margin-bottom: 0.5rem;
+}
+
+.timeline-item ul {
+  list-style: none;
+  padding: 0;
+}
+
+.timeline-item ul li {
+  font-size: 0.9rem;
+  padding: 0.2rem 0;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.timeline-item ul li::before {
+  content: '\2022';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
+/* Skills list */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.skill-category h4 {
+  font-size: 0.9rem;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.skill-category ul {
+  list-style: none;
+  padding: 0;
+}
+
+.skill-category ul li {
+  font-size: 0.9rem;
+  padding: 0.3rem 0;
+  color: var(--text-light);
+}
+
+/* Education */
+.education-item {
+  margin-bottom: 1.5rem;
+}
+
+.education-item h4 {
+  font-size: 1.05rem;
+  color: var(--text);
+}
+
+.education-item .institution {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  margin-bottom: 0.3rem;
+}
+
+.education-item .details {
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+/* Syllabi table */
+.syllabi-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.syllabi-table th,
+.syllabi-table td {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.9rem;
+}
+
+.syllabi-table th {
+  background: var(--primary);
+  color: white;
+  font-weight: 500;
+}
+
+.syllabi-table tr:hover {
+  background: var(--bg-alt);
+}
+
+.syllabi-table a {
+  color: var(--primary-light);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.syllabi-table a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  background: var(--primary);
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+footer a {
+  color: white;
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  header .contact-info {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  nav .container {
+    padding: 0 1rem;
+  }
+
+  nav a {
+    padding: 0.75rem 0.75rem;
+    font-size: 0.8rem;
+  }
+
+  .doc-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  section {
+    padding: 2.5rem 0;
+  }
+}
